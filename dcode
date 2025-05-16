@@ -265,9 +265,8 @@ def url_decode(string):
 
 
 def hex_decode(string):
-    string = string.replace('0x', '')
     try:
-        decoded_str = bytes.fromhex(string).decode()
+        decoded_str = int(string, 16)
 
         if decoded_str in decoded:
             return  # Exit if already decoded
